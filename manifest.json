@@ -1,0 +1,19 @@
+{
+  "name": "Override To chrome://new-tab-page",
+  "description": "Overrides default home.roche.com",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": "hi.png"
+  },
+  "background": {
+    "service_worker": "bg.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://home.roche.com/"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["tabs", "scripting", "activeTab"]
+}
